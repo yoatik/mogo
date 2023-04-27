@@ -1,0 +1,91 @@
+.about-area {
+    position: relative;
+    overflow: hidden;
+
+    .about-area__single {
+        position: relative;
+        transition: all .3s ease;
+
+        .about-area__single--img {
+            position: relative;
+            transition: all .3s ease;
+            display: block;
+
+            .about-area__single--content {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 1;
+                opacity: 0;
+                background: linear-gradient(0deg, rgb(252, 227, 138) 0%, rgb(243, 129, 129) 100%);
+                transition: all .3s linear;
+
+                i {
+                    color: #fff;
+                    font-size: 30px;
+                    line-height: 0;
+                    position: relative;
+                    top: 35%;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    position: relative;
+                    top: 37%;
+                }
+
+                .about-area__single--content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            right: 0px;
+            bottom: 0px;
+            background: #95e1d3;
+            transition: all .3s ease;
+            z-index: -1;
+        }
+
+        &:hover {
+            transform: translate(-8px, -8px);
+
+            .about-area__single--content {
+                opacity: 0.9 !important;
+            }
+
+
+            &::before {
+                right: -8px;
+                bottom: -8px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .about-area {
+        .about-area__single {}
+
+        &:last-child {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+}

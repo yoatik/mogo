@@ -1,0 +1,36 @@
+<section class="what-do-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <small>Services</small>
+                <h3>What we do</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-5">
+                <div class="what-we-do-bg">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-7">
+                <div class="what-do-area-content">
+                    <nz-collapse nzAccordion>
+                        <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name"
+                            [nzActive]="panel.active">
+                            <!-- <div class="icon">
+                                    <i class={{panel.icon}}></i>
+                                </div> -->
+                            <p>{{ panel.content }}</p>
+
+                        </nz-collapse-panel>
+                    </nz-collapse>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Photography",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    },
+    {
+        "id": 2,
+        "title": "Web Design",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    },
+    {
+        "id": 3,
+        "title": "Creativity",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    },
+    {
+        "id": 4,
+        "title": "seo",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    },
+    {
+        "id": 5,
+        "title": "Css/Html",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    },
+    {
+        "id": 6,
+        "title": "DIGITAL",
+        "serviceicon":"\f101",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    }
+]

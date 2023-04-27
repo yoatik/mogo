@@ -1,0 +1,101 @@
+@use "./variables" as abstract;
+@use "./mixins" as *;
+
+/*********************************************
+ * Helper classes
+ *********************************************/
+
+.t-col-primary {
+    color: abstract.$primaryColor !important;
+}
+
+.t-col-secondary {
+    color: abstract.$secondaryColor !important;
+}
+
+.t-col-success {
+    color: abstract.$success !important;
+}
+
+.t-col-danger {
+    color: abstract.$danger !important;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.text-titlecase {
+    text-transform: capitalize;
+}
+
+.border {
+    border: 1px solid rgba(abstract.$grayColor, 0.42);
+}
+
+.radius-5 {
+    border-radius: 5px;
+}
+
+// Font weight
+@for $i from 1 through 9 {
+    .font-weight-#{$i * 100} {
+        @include font-weight(#{$i * 100});
+    }
+}
+
+.s-margin-top {
+    @include margin(30, null, null, null);
+    @include respond-to(medium) {
+        @include margin(30, null, null, null);
+    }
+}
+
+.s-margin-bottom {
+    @include margin(null, null, 30, null);
+    @include respond-to(medium) {
+        @include margin(null, null, 40, null);
+    }
+}
+
+// Margin
+@for $i from 1 through 10 {
+    .mt-#{calc($i/2*10)} {
+        margin-top: #{calc($i/2*10)}+px !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mb-#{calc($i/2*10)} {
+        margin-bottom: #{calc($i/2*10)}+px !important;
+    }
+}
+
+// section loader
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.section-loader {
+    text-align: center;
+    line-height: 1;
+    i {
+        @include font-size-em(30);
+        line-height: 1px;
+        animation: loader infinite 3s linear;
+        display: block;
+    }
+}
+
+// text-truncate
+.text-truncate {
+    max-width: 400px;
+    @include respond-to(x-large) {
+        max-width: 500px;
+    }
+}

@@ -1,0 +1,1103 @@
+@use '../abstracts/index' as abstract;
+
+/**************************************
+* All overrides scss goes here
+**************************************/
+
+
+/*------------------------------------------------------------------
+[ International phone number ]*/
+
+.international-phone__input {
+    flex: 0 0 auto;
+    width: 100%;
+
+    .dropbtn {
+        @include abstract.padding(0, 0, 0, 0);
+        background-color: transparent !important;
+        color: var(--text-color) !important;
+        line-height: 1;
+        position: relative;
+        width: 32px;
+        display: flex;
+
+        &:after {
+            content: "\f106";
+            font-family: Flaticon;
+            position: absolute;
+            line-height: 1;
+            font-size: 1em;
+            right: -3px;
+            top: -2px;
+        }
+
+        .arrow-down {
+            display: none;
+        }
+    }
+
+    #dial-code {
+        padding-top: 0 !important;
+        @include abstract.font-size-em(15);
+        color: var(--text-color);
+        margin-left: 0.75em !important;
+        margin-bottom: 0 !important;
+    }
+
+    input {
+        margin-left: 0.3em !important;
+    }
+
+    .dropdown {
+        position: inherit !important;
+
+        &-content {
+            top: calc(100% + 0.85em);
+            left: -1.05em;
+            width: calc(100% + 2.1em);
+            background-color: var(--theme-bg) !important;
+            border-radius: 5px;
+            overflow: hidden;
+            @include abstract.box-shadow(0, 6, 17, 0.1, rgba(abstract.$grayColor, 0.07), important);
+
+            .scrollable-menu {
+                width: 100% !important;
+                @include abstract.scrollbar(5px, abstract.$grayColor, transparent);
+            }
+
+            a {
+                padding: 0.5em 0.7em 0.5em 0.7em !important;
+                border: 0;
+                @include abstract.font-size-em(14);
+
+                &:not(:first-child) {
+                    padding-top: 0 !important;
+                }
+
+                .flag {
+                    position: relative;
+                    top: 1px;
+                }
+
+                .country-name {
+                    margin-left: 0.6em !important;
+                }
+            }
+        }
+    }
+}
+
+// International phone number ends here
+
+/*------------------------------------------------------------------
+[ Ng zorro ]*/
+
+// Tooltip starts
+.ant-tooltip {
+    &-placement-topLeft {
+        transform: translateX(-12px)
+    }
+
+    &-inner {
+        @include abstract.font-size-em(14);
+        @include abstract.font-weight(500);
+        color: var(--theme-bg);
+        background-color: var(--text-color);
+        @include abstract.padding(8, 10, 8, 10);
+        border-radius: 3px;
+    }
+}
+
+// Tooltip ends
+// Upload starts
+.ant-upload.ant-upload-drag {
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+    padding: var(--input-btn-padding);
+    background-color: rgba(abstract.$primaryColor, 0.03);
+
+    .ant-upload-btn {
+        padding: var(--input-btn-padding);
+    }
+
+    p.ant-upload-drag-icon {
+        background-color: rgba(abstract.$primaryColor, 0.1);
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include abstract.margin(null, null, 14, null);
+        margin-inline: auto;
+
+        i {
+            color: abstract.$primaryColor;
+            @include abstract.font-size-em(21);
+            line-height: 1px;
+        }
+
+        @include abstract.respond-to(small) {
+            @include abstract.margin(null, null, 17, null);
+        }
+    }
+
+    p.ant-upload-text {
+        @include abstract.margin(null, null, 2, null);
+        @include abstract.font-size-em(17);
+        @include abstract.font-weight(500);
+
+        @include abstract.respond-to(small) {
+            @include abstract.font-size-em(19);
+            @include abstract.margin(null, null, 3, null);
+        }
+    }
+
+    p.ant-upload-hint {
+        @include abstract.font-size-em(14);
+        color: rgba(#0a1125, 0.5);
+
+        @include abstract.respond-to(small) {
+            @include abstract.font-size-em(15);
+        }
+    }
+
+    &:not(.ant-upload-disabled):hover {
+        border-color: abstract.$primaryColor;
+    }
+}
+
+.ant-progress-inner {
+    background-color: rgba(abstract.$primaryColor, 0.03);
+}
+
+.ant-progress-status-success .ant-progress-text {
+    // text-align: right;
+    line-height: 1px;
+}
+
+.ant-upload.ant-upload-drag {
+    background-color: rgba(abstract.$primaryColor, 0.03);
+}
+
+.ant-progress-bg {
+    background-color: abstract.$primaryColor;
+}
+
+.ant-progress-text {
+    color: var(--text-color);
+    @include abstract.font-size-em(15);
+}
+
+.ant-progress-circle .ant-progress-inner {
+    width: 120px !important;
+    height: 120px !important;
+}
+
+.ant-progress-circle {
+    @include abstract.margin(null, null, 10, null);
+
+    .ant-progress-text {
+        color: var(--text-color);
+    }
+}
+
+.ant-progress-circle-trail {
+    stroke: rgba(abstract.$primaryColor, 0.03);
+}
+
+.ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path {
+    stroke: abstract.$primaryColor;
+}
+
+// Upload ends
+// Modal starts
+.ant-modal {
+    font-size: 0.9375em;
+
+    &-content {
+        @include abstract.box-shadow(0, 5, 17, 4, rgba(#0a1125, 0.16), null);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    &-header {
+        @include abstract.padding(13, 20, 13, 20);
+        border-bottom: 1px solid rgba(abstract.$grayColor, 0.42);
+
+        .ant-modal-title {
+            @include abstract.font-size-em(18);
+            color: var(--text-color);
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 8px;
+        right: 9px;
+        color: var(--text-color);
+        transition: color 0.3s linear;
+
+        &:hover {
+            color: abstract.$secondaryColor;
+        }
+
+        &-x {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 27px;
+            font-size: 12px;
+            line-height: 1;
+        }
+    }
+
+    &-body {
+        @include abstract.padding(0, 0, 0, 0);
+        font-size: 1em;
+        // max-height: 585px;
+        // @include abstract.scrollbar(5px, abstract.$grayColor, transparent);
+        // overflow: auto;
+    }
+
+    &-footer {
+        display: none;
+        @include abstract.padding(13, 20, 13, 20);
+        border-top: 1px solid rgba(abstract.$grayColor, 0.42);
+    }
+
+    &.modal-no__footer {
+        .ant-modal-footer {
+            display: none;
+        }
+    }
+
+    &.small-modal {
+        max-width: 375px;
+        width: 90% !important;
+    }
+
+    &.alert-modal {
+        .ant-modal-header {
+            display: none;
+        }
+
+        .ant-modal-close {
+            top: 15px;
+            right: 15px;
+            display: none;
+
+            &:before {
+                content: "\f116";
+                font-family: Flaticon;
+                @include abstract.font-size-em(12);
+                color: var(--text-color);
+                transition: all 0.3s linear;
+            }
+
+            &:hover {
+                &:before {
+                    color: abstract.$secondaryColor;
+                }
+            }
+
+            &-x {
+                display: none;
+            }
+        }
+
+        .ant-modal-body {
+            @include abstract.padding(50, 50, 50, 50);
+            text-align: center;
+
+            .modal-body {
+                i {
+                    @include abstract.font-size-em(55);
+                    line-height: 1;
+                    @include abstract.margin(null, null, 3.5, null);
+                    display: block;
+                    position: relative;
+                    top: 2px;
+                }
+
+                .main-btn {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}
+
+.modal-footer {
+    border-top: 0;
+    padding: 0;
+    border-radius: 0;
+
+    >* {
+        margin: 0;
+    }
+}
+
+// Modal ends
+// Select starts
+.ant-select {
+    display: flex;
+    border: 1px solid abstract.$grayColor;
+    border-radius: 5px;
+    // padding: var(--input-btn-padding);
+    line-height: abstract.$line-height-base * 1px;
+    height: 42px;
+    padding: 0;
+    font-size: 0.9375em;
+    color: var(--text-color);
+    min-width: 110px;
+
+    .ant-select-selector {
+        padding: var(--input-btn-padding);
+    }
+
+    @include abstract.respond-to(small) {
+        height: 50px;
+    }
+}
+
+.ant-select.custom-input__group {
+    padding: 0;
+    @include abstract.font-size-em(15);
+
+    &::placeholder {
+        color: abstract.$grayColor;
+    }
+
+    &::-moz-placeholder {
+        color: abstract.$grayColor;
+    }
+
+    &:-ms-input-placeholder {
+        color: abstract.$grayColor;
+    }
+
+    &::-webkit-input-placeholder {
+        color: abstract.$grayColor;
+    }
+
+    .ant-select-selector {
+        padding: var(--input-btn-padding);
+    }
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding: var(--input-btn-padding);
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: transparent;
+    box-shadow: none;
+    border-right-width: 0;
+}
+
+.ant-select-arrow {
+    color: var(--text-color);
+    @include abstract.font-size-em(18);
+    right: 12px;
+
+    @include abstract.respond-to(small) {
+        right: 14px;
+    }
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+    line-height: 20px;
+
+    @include abstract.respond-to(small) {
+        line-height: 24px;
+    }
+}
+
+.ant-select-item-empty {
+    text-align: center;
+    color: abstract.$grayColor;
+
+    img {
+        max-width: 40px;
+        @include abstract.margin(2, null, null, null);
+    }
+
+    p {
+        @include abstract.margin(4, null, null, null);
+    }
+}
+
+// .select-dropdown {
+// }
+.ant-select-dropdown {
+    margin: 0;
+    border-radius: 5px;
+    margin-top: 1px;
+    @include abstract.box-shadow(0, 5, 17, 4, rgba(#0a1125, 0.03), null);
+
+    .cdk-virtual-scroll-viewport {
+        @include abstract.scrollbar(7px, rgba(abstract.$primaryColor, 0.5), transparent);
+    }
+}
+
+.ant-select-item {
+    @include abstract.padding(5, 15, 5, 15);
+    @include abstract.font-size-em(15);
+    color: var(--text-color);
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: transparent;
+    color: abstract.$primaryColor;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: transparent;
+    color: abstract.$primaryColor;
+}
+
+.ant-select-single.ant-select-open .ant-select-selection-item {
+    color: rgba(#0a1125, 0.5);
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    color: abstract.$grayColor;
+    line-height: 20px;
+
+    @include abstract.respond-to(small) {
+        line-height: 24px;
+    }
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) .ant-select-item-option-state {
+    color: abstract.$primaryColor;
+}
+
+.ant-select-multiple {
+    .ant-select-selection-placeholder {
+        left: 1em;
+    }
+
+    .ant-select-selector {
+        max-height: 400px;
+        overflow: hidden;
+        overflow-y: auto;
+        @include abstract.scrollbar(5px, abstract.$grayColor, transparent);
+    }
+
+    .ant-select-selection-search {
+        // pointer-events: none;
+        display: none;
+        margin-inline-start: 0;
+    }
+
+    .ant-select-selection-item-content {
+        margin-right: 0;
+    }
+
+    .ant-select-selection-item {
+        // background: abstract.$primaryColor;
+        background-color: #8c9adb;
+        border-radius: 3px;
+        color: var(--theme-bg);
+        transition: color 0.3s linear;
+        padding: 1px 19px 0 7px;
+        position: relative;
+    }
+
+    .ant-select-selection-item-remove {
+        color: abstract.$grayColor;
+        position: absolute;
+        right: 5px;
+        top: -1px;
+
+        &:hover {
+            color: var(--theme-bg);
+        }
+
+        &>.anticon {
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+        }
+    }
+}
+
+.select-input.ant-select-focused {
+    .ant-select-selection-search {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+// Event history sort select
+.event-history__sort {
+    height: 39px;
+    width: 110px;
+    @include abstract.font-size-em(14);
+
+    .ant-select-selector {
+        padding: 0.5em 0.9em !important;
+    }
+
+    &.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+        line-height: 25px;
+    }
+
+    .ant-select-arrow {
+        margin-top: -5px;
+    }
+
+    @include abstract.respond-to(small) {
+        height: 43px;
+        width: 120px;
+
+        .ant-select-arrow {
+            margin-top: -8px;
+        }
+    }
+}
+
+// Group page
+.ant-select.group-select {
+    height: auto;
+
+    .ant-select-selector {
+        cursor: pointer !important;
+
+        .ant-select-selection-item {
+            flex: 1 0 auto;
+            height: 26px;
+            max-width: 98%;
+            // width: calc(50% - 4px);
+            @include abstract.font-size-em(14);
+        }
+    }
+
+    &.group-select-lg {
+        .ant-select-selector {
+            .ant-select-selection-item {
+                flex: 0 0 auto;
+                width: calc(50% - 4px);
+            }
+        }
+    }
+}
+
+// Select ends
+// Pagination starts
+.ant-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    @include abstract.margin(12, null, null, null);
+    @include abstract.padding(17, 12, null, 12);
+    border-top: 1px solid rgba(abstract.$grayColor, 0.42);
+    @include abstract.font-size-em(15);
+
+    li {
+        color: var(--text-color);
+        @include abstract.font-size-em(14);
+        height: auto;
+        line-height: 1;
+
+        &:not(.ant-pagination-total-text) {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: 0;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            flex: 0 0 auto;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: rgba(abstract.$primaryColor, 0.07);
+                border-radius: 3px
+            }
+
+            &.ant-pagination-item {
+                min-width: 20px;
+                @include abstract.margin(null, 5, null, null);
+
+                &-active {
+                    background-color: abstract.$primaryColor;
+                    color: var(--theme-bg);
+
+                    &:hover {
+                        background-color: abstract.$primaryColor;
+                        color: var(--theme-bg);
+                    }
+                }
+            }
+        }
+
+        &:nth-last-child(2) {
+            margin-right: 0 !important;
+        }
+    }
+
+    &-prev {
+        min-width: 25px;
+        @include abstract.margin(null, 8, null, null);
+
+        i {
+            @include abstract.font-size-em(20);
+            line-height: 1px;
+        }
+    }
+
+    &-next {
+        min-width: 25px;
+        @include abstract.margin(null, null, null, 8);
+
+        i {
+            @include abstract.font-size-em(20);
+            line-height: 1px;
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    &-jump-prev {
+        min-width: 25px;
+        @include abstract.margin(null, 8, null, null);
+    }
+
+    &-jump-next {
+        min-width: 25px;
+        @include abstract.margin(null, 8, null, null);
+    }
+
+    &-total-text {
+        margin-right: auto;
+        @include abstract.padding(null, 10, null, null);
+        height: auto;
+    }
+
+    &-disabled {
+        opacity: 0.5;
+
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+}
+
+// Pagination ends
+// Select starts
+.ant-dropdown {
+    background-color: var(--theme-bg);
+    @include abstract.box-shadow(0, 5, 17, 4, rgba(#0a1125, 0.03), null);
+    border-radius: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    @include abstract.padding(5, null, 5, null);
+
+    ul {
+        li {
+            list-style: none;
+            @include abstract.padding(8, 15, 8, 15);
+
+            &:not(:first-child) {
+                padding-top: 0;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: abstract.$primaryColor;
+            }
+        }
+    }
+
+    &-menu {
+        box-shadow: none;
+    }
+
+    h4 {
+        @include abstract.padding(8, 15, null, 15);
+        margin-bottom: 0;
+        @include abstract.font-size-em(17);
+    }
+
+    &.filter-dropdown {
+        width: 270px;
+    }
+}
+
+// Select ends
+// Date range picker starts
+.ant-picker {
+    border: 1px solid abstract.$grayColor;
+    border-radius: 5px;
+    padding: 4px 11px 4px;
+    position: relative;
+    @include abstract.font-size-em(14);
+
+    &:hover {
+        border-color: abstract.$grayColor;
+    }
+
+    &-focused {
+        border-color: abstract.$primaryColor;
+        box-shadow: none;
+
+        &:hover {
+            border-color: abstract.$primaryColor;
+        }
+
+        .ant-picker-suffix {
+            color: var(--text-color);
+        }
+    }
+
+    &-clear {
+        color: abstract.$grayColor;
+
+        &:hover {
+            color: abstract.$secondaryColor;
+        }
+    }
+
+    .ant-picker-active-bar {
+        background: abstract.$primaryColor;
+    }
+
+    &-input {
+        flex: 1;
+        -ms-flex: 1;
+
+        &>input {
+            @include abstract.font-size-em(15);
+            color: var(--text-color);
+        }
+    }
+
+    &-suffix {
+        color: rgba(abstract.$grayColor, 0.9);
+        transition: all 0.3s linear;
+        position: absolute;
+        left: 11px;
+        top: 9px;
+        margin-left: 0;
+
+        @include abstract.respond-to(small) {
+            top: 8px;
+        }
+    }
+
+    &-range-separator {
+        position: relative;
+        width: 22px;
+        height: 16px;
+        margin-left: 4px;
+
+        span {
+            background-color: rgba(abstract.$grayColor, 0.42);
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: rgba(209, 216, 225, 0.42);
+            top: 8px;
+            left: 0;
+
+            i {
+                display: none;
+            }
+        }
+    }
+
+    &-range .ant-picker-active-bar {
+        position: absolute;
+        margin-left: 36px;
+    }
+
+    &-panel-container {
+        @include abstract.box-shadow(0, 5, 17, 4, rgba(#0a1125, 0.03), null);
+        border-radius: 5px;
+        background: var(--theme-bg);
+    }
+
+    &-header {
+        color: var(--text-color);
+        border-bottom-color: rgba(abstract.$grayColor, 0.42);
+
+        button {
+            color: abstract.$grayColor;
+
+            &:hover {
+                color: var(--text-color);
+            }
+        }
+
+        &-view {
+            button {
+                color: var(--text-color);
+
+                &:hover {
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+
+    &-content th {
+        color: var(--text-color);
+    }
+
+    &-cell {
+        color: rgba(abstract.$grayColor, 0.85);
+
+        &-in-view {
+            color: var(--text-color);
+        }
+    }
+}
+
+.ant-picker-cell:hover:not(.ant-picker-cell-in-view) .ant-picker-cell-inner,
+.ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end) .ant-picker-cell-inner {
+    background-color: rgba(abstract.$grayColor, 0.2);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner:before {
+    border-color: abstract.$primaryColor;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+    background-color: abstract.$primaryColor;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-start-near-hover:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range):after {
+    border-color: abstract.$primaryColor;
+}
+
+tr>.ant-picker-cell-in-view.ant-picker-cell-range-hover:last-child:after,
+tr>.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child:after,
+.ant-picker-cell-in-view.ant-picker-cell-end.ant-picker-cell-range-hover-edge-end.ant-picker-cell-range-hover-edge-end-near-range:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-edge-end:not(.ant-picker-cell-range-hover-edge-end-near-range):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:after {
+    border-color: abstract.$primaryColor;
+}
+
+tr>.ant-picker-cell-in-view.ant-picker-cell-range-hover:first-child:after,
+tr>.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:first-child:after,
+.ant-picker-cell-in-view.ant-picker-cell-start.ant-picker-cell-range-hover-edge-start.ant-picker-cell-range-hover-edge-start-near-range:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-edge-start:not(.ant-picker-cell-range-hover-edge-start-near-range):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:after {
+    border-color: abstract.$primaryColor;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):before {
+    background: rgba(abstract.$primaryColor, 0.1);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start.ant-picker-cell-range-hover:before {
+    background: rgba(abstract.$primaryColor, 0.3);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start:before {
+    background: rgba(abstract.$primaryColor, 0.3);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single).ant-picker-cell-range-hover-end:before {
+    background: rgba(abstract.$primaryColor, 0.3);
+}
+
+.custom-ranger__picker--icon {
+    position: relative;
+}
+
+// Date range picker ends
+// Notification starts
+.ant-notification-notice {
+    border-radius: 5px;
+    @include abstract.box-shadow(-7, 6, 17, 0.1, rgba(abstract.$grayColor, 0.15), null);
+    background-color: var(--theme-bg);
+    color: var(--text-color);
+    width: 350px;
+    padding: 8px 15px;
+
+    p {
+        @include abstract.font-size-em(15);
+    }
+
+    &-close {
+        &-x {
+            @include abstract.font-size-em(13);
+            color: var(--text-color);
+            transition: all 0.3s linear;
+
+            &:hover {
+                color: abstract.$secondaryColor;
+            }
+        }
+    }
+
+    @include abstract.respond-to(max-small) {
+        &-close {
+            top: 12px;
+        }
+    }
+
+    @include abstract.respond-to(small) {
+        padding: 15px 20px;
+
+        &-close {
+            &-x {
+                @include abstract.font-size-em(15);
+            }
+        }
+    }
+    box-shadow: 0 0 24px 5px rgba(0, 0, 0, 0.08);
+}
+.ant-notification-notice-message{
+    color: #5cb85c !important;
+    // font-weight: bold !important;
+}
+// Notification ends
+// Ng zorro ends here
+
+.ant-modal-close-x {
+    background: #f38181 !important;
+    color: #fff !important;
+}
+
+
+
+
+// Overrides antd
+
+.ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+    position: absolute !important;
+    right: 0 !important;
+    font-size: 20px;
+    top: 13px;
+    color: #ccc;
+    transform: rotate(90deg);
+}
+
+.ant-collapse-content>.ant-collapse-content-box p {
+    font-size: 15px;
+    line-height: 25px;
+    font-style: italic;
+    color: #999;
+    height: 130px;
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+
+.ant-collapse>.ant-collapse-item {
+    background: #fff;
+}
+
+.ant-collapse>.ant-collapse-item>.ant-collapse-header {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 16px;
+    margin-left: 50px;
+}
+
+
+// Swiper Arrow
+
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    display: none !important;
+}
+
+// 
+
+
+.ant-drawer-content-wrapper {
+    width: 250px !important;
+
+    .ant-drawer-body {
+        padding: 0 !important;
+
+        li.navbar-area__navbar-collapse--navbar-nav--nav-item {
+            padding: 10px !important;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 10px !important;
+            a{
+                color: #ff7875 !important;
+                padding-left: 10px;
+            }
+            &:last-child{
+                border: none;
+            }
+        }
+    }
+}
+
+
+
+// ant form
+
+nz-form-item.ant-form-item.ant-row {
+    display: block !important;
+}
+
+
+
+.ant-input,
+.ant-input-affix-wrapper {
+    padding: 8px 11px;
+}
+
+.ant-select {
+    min-width: 85px !important;
+    height: 40px !important;
+    border: none !important;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+    line-height: 18px !important;
+}
+
+.ant-btn {
+    width: 100% !important;
+    display: block !important;
+    margin-top: 20px;
+}
+
+.ant-input-focused,
+.ant-input:focus {
+    border-color: #f38181 !important;
+    box-shadow: 0 0 0 2px #f3818107 !important;
+}
+
+.ant-input:hover {
+    border-color: #f38181 !important;
+}
+
+.ant-btn-primary{
+    background: #f38181 !important;
+    border-color: #f38181 !important;
+   height: 45px;
+   &:hover{
+    background: #f38181d2 !important;
+    // color: #222 !important;
+
+   }
+}

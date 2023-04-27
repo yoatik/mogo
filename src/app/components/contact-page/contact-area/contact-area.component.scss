@@ -1,0 +1,15 @@
+.contact-area{
+    position: relative;
+    .section-title{
+        margin-bottom: 40px;
+    }
+    .contact-form{
+        padding: 40px;
+        box-shadow: 0 0 24px 5px rgba(0,0,0,.08);
+        background: #fff;
+
+        input#message{
+            height: 150px;
+        }
+    }
+}

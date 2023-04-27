@@ -1,0 +1,201 @@
+<section class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="blog-details-area__top--content">
+                    <img src="/assets/images/blogs/blog-details-1.jpg" alt="blog-details">
+                    <ul class="blog-details-area__top--list d-flex align-items-center">
+                        <li><span>Posted On:</span> April 28 2023</li>
+                        <li><span>Posted By:</span> John Anderson</li>
+                    </ul>
+
+                    <div class="blog-details-area__top-content--content">
+                        <h3>Hidden Gems You Must Visit While Exploring Greece</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                        </p>
+
+                        <div class="blog-details-area__top-content--content--img">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="single-img">
+                                        <img src="/assets/images/blogs/4.jpg" alt="blog-details">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="single-img">
+                                        <img src="/assets/images/blogs/5.jpg" alt="blog-details">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="single-img">
+                                        <img src="/assets/images/blogs/4.jpg" alt="blog-details">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <blockquote class="flaticon-chat">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquid praesentium
+                                eveniet illum asperiores, quidem, ipsum voluptatum numquam ducimus nisi exercitationem
+                                dolorum facilis Repellendus aliquid praesentium eveniet illum asperiores.</p>
+                        </blockquote>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                        </p>
+
+                        <ul class="social d-flex align-item-center justify-content-end">
+                            <li><a href="#"><i class="flaticon-facebook-app-symbol"></i></a></li>
+                            <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                            <li><a href="#"><i class="flaticon-pinterest"></i></a></li>
+                            <li><a href="#"><i class="flaticon-youtube"></i></a></li>
+                        </ul>
+                        <hr>
+                        <form class="contact-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                            <h2>Leave A Comment</h2>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <nz-form-item>
+                                        <nz-form-label nzFor="name" nzRequired
+                                            nzTooltipTitle="What do you want other to call you">
+                                            <span>Name</span>
+                                        </nz-form-label>
+                                        <nz-form-control nzErrorTip="Please input your name!">
+                                            <input nz-input id="name" placeholder="Please input your name!"
+                                                formControlName="name" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                                <div class="col-lg-6">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+                                        <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                                            <input placeholder="Please input your email!" nz-input
+                                                formControlName="email" id="email" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+                            <nz-form-item>
+                                <nz-form-label nzFor="message" nzRequired>
+                                    <span>Message</span>
+                                </nz-form-label>
+                                <nz-form-control class="message" nzErrorTip="Please input your message!">
+
+                                    <textarea nz-input id="message" formControlName="message"
+                                        placeholder="Please input your message"
+                                        [nzAutosize]="{ minRows: 5, maxRows: 6 }"></textarea>
+                                </nz-form-control>
+
+                            </nz-form-item>
+
+                            <nz-form-item class="register-area">
+                                <nz-form-control>
+                                    <button nz-button nzType="primary">Submit</button>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <aside>
+                    <div class="blog-details-area__sidebar">
+                        <div class="blog-details-area__sidebar--single">
+                            <div class="top-header">
+                                <h3>Categories</h3>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li><a>Europe (09)</a></li>
+                                    <li><a>Latest (15)</a></li>
+                                    <li><a>Europe (09)</a></li>
+                                    <li><a>Latest (89)</a></li>
+                                    <li><a>Europe (09)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="blog-details-area__sidebar--single">
+                            <div class="top-header">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <article class="item">
+                                <a class="thumb">
+                                    <span class="fullimage bg4" role="img"></span>
+                                </a>
+                                <div class="info">
+                                    <time datetime="2020-06-30">April 25, 2023</time>
+                                    <a class="title">
+                                        Hidden Gems You Must Visit While Exploring Greece
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                            </article>
+
+                            <article class="item">
+                                <a class="thumb">
+                                    <span class="fullimage bg4" role="img"></span>
+                                </a>
+                                <div class="info">
+                                    <time datetime="2020-06-30">April 25, 2023</time>
+                                    <a class="title">
+                                        Hidden Gems You Must Visit While Exploring Greece
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                            </article>
+
+                            <article class="item">
+                                <a class="thumb">
+                                    <span class="fullimage bg4" role="img"></span>
+                                </a>
+                                <div class="info">
+                                    <time datetime="2020-06-30">April 25, 2023</time>
+                                    <a class="title">
+                                        Hidden Gems You Must Visit While Exploring Greece
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                            </article>
+                        </div>
+
+                        <div class="blog-details-area__sidebar--single">
+                            <div class="top-header">
+                                <h3>Tags</h3>
+                            </div>
+                            <div class="tagarea">
+                                <a>Business (3)</a>
+                                <a>Privacy (3)</a>
+                                <a>Tips (2)</a>
+                                <a>Technology (2)</a>
+                                <a>Uncategorized (1)</a>
+                                <a>Mogo </a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

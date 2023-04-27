@@ -1,0 +1,65 @@
+.footer-area {
+    padding: 50px 0;
+    background: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+
+    .footer-area__logo {
+        font-size: 50px;
+        text-align: center;
+        font-family: Kaushan Script, cursive;
+    }
+
+    ul.social {
+        margin-bottom: 35px;
+
+        li {
+            a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background: #f38181;
+                transition: all 0.3s ease;
+                margin-right: 10px;
+                text-align: center;
+                border-radius: 50px;
+
+                i {
+                    font-size: 25px;
+                    color: #fff;
+                    line-height: 45px;
+                }
+
+                &:hover {
+
+                    background: #fff;
+
+                    i {
+                        color: #f38181 !important;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+
+    .copy-area {
+        margin-top: 20px;
+
+        p {
+            text-align: center;
+
+            a {
+                color: #f38181;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-area {
+        padding: 30px 0;
+    }
+}

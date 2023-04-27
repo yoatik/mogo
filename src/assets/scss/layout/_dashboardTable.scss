@@ -1,0 +1,157 @@
+@use '../abstracts/index' as abstract;
+
+/********************************************
+ * Dashboard box styles
+ ********************************************/
+
+.dashboard {
+    &-table {
+        overflow: hidden;
+        overflow-x: auto;
+        @include abstract.padding(null, null, 15, null);
+        @include abstract.margin(null, null, -15, null);
+        @include abstract.scrollbar(8px, transparent, transparent);
+        &:hover {
+            @include abstract.scrollbar(8px, abstract.$grayColor, transparent);
+        }
+        table {
+            width: 100%;
+            &>:not(caption) {
+                &>* {
+                    cursor: default;
+                    &>* {
+                        @include abstract.font(400, normal);
+                        @include abstract.font-size-em(14);
+                        border-bottom: 1px solid rgba(abstract.$grayColor, 0.42);
+                        @include abstract.padding(12, 12, 12, 12);
+                        white-space: nowrap;
+                        line-height: 1.4;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            // border-radius: 50%;
+                            border-radius: 5px;
+                            border: 1px solid rgba(abstract.$grayColor, 0.42);
+                        }
+                        .main-btn {
+                            height: auto;
+                            width: auto;
+                            min-width: 0;
+                            border-radius: 3px;
+                            @include abstract.padding(7, 8, 7, 8);
+                            @include abstract.font-size-em(12);
+                            @include abstract.margin(null, null, null, 10);
+                        }
+                        .table-shimmer {
+                            width: 150px;
+                            height: 20px;
+                            border-radius: 3px;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                    &:last-child {
+                        &>* {
+                            @include abstract.padding(12, 12, 0, 12);
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+            &>:not(:last-child) {
+                &>:last-child {
+                    &>* {
+                        @include abstract.font(600, normal);
+                        @include abstract.font-size-em(14);
+                        border-bottom: 1px solid rgba(abstract.$grayColor, 0.42);
+                        @include abstract.padding(null, 12, 12, 12);
+                        white-space: nowrap;
+                        line-height: 1.4;
+                        cursor: auto;
+                        i {
+                            vertical-align: middle;
+                            @include abstract.font-size-em(17);
+                            line-height: 1;
+                            @include abstract.margin(null, null, null, 4);
+                            color: abstract.$primaryColor;
+                        }
+                        &.th-order {
+                            position: relative;
+                            &:after {
+                                content: "\f131";
+                                font-family: Flaticon;
+                                line-height: 1;
+                                position: absolute;
+                                right: 0.75em;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                @include abstract.font-size-em(15);
+                            }
+                        }
+                    }
+                }
+            }
+            .dashboard-table__buttons {
+                display: inline-flex;
+                .main-btn {
+                    @include abstract.padding(10, 12, 10, 12);
+                    @include abstract.margin(null, null, null, 0);
+                    @include abstract.font-size-em(14);
+                    &:not(:last-child) {
+                        @include abstract.margin(null, 10, null, null);
+                    }
+                }
+            }
+        }
+        &.dashboard-table__nested {
+            &>table {
+                &>:not(caption) {
+                    &>* {
+                        &>* {
+                            &.dashboard-table__nested--icon {
+                                @include abstract.font-size-em(16);
+                                i {
+                                    line-height: 1;
+                                    vertical-align: middle;
+                                    transform: rotate(0deg);
+                                    transition: transform 0.3s ease;
+                                    display: inline-block;
+                                }
+                                &.active-icon {
+                                    i {
+                                        line-height: 1;
+                                        vertical-align: middle;
+                                        transform: rotate(-180deg);
+                                        transition: transform 0.3s ease;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                tr.dashboard-table__nested--expand {
+                    &>* {
+                        background-color: #f0f2f5;
+                        table {
+                            &>:not(caption) {
+                                &>* {
+                                    &>* {
+                                        @include abstract.font-size-em(16);
+                                    }
+                                }
+                            }
+                            &>:not(:last-child) {
+                                &>:last-child {
+                                    &>* {
+                                        @include abstract.font-size-em(16);
+                                        @include abstract.padding(0, null, null, null);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

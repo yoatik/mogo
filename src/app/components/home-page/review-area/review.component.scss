@@ -1,0 +1,136 @@
+.review-area {
+    position: relative;
+    background: #f8f8f8;
+    overflow: hidden;
+
+    .review-area__single-item {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .review-area__icon {
+        border: 4px solid #95e1d3;
+        padding: 35px;
+        text-align: center;
+
+        i {
+            font-size: 70px;
+            color: #95e1d3;
+            line-height: 10px;
+        }
+    }
+
+    .review-area__content {
+        position: relative;
+        max-width: 93%;
+        margin: 0 auto;
+
+        p {
+            color: #999999;
+            font-size: 24px;
+            font-style: italic;
+            line-height: 36px;
+            font-weight: 300;
+        }
+
+        h4 {
+            font-size: 24px;
+            color: #333;
+            font-family: 'Kaushan Script', cursive;
+            padding-left: 70px;
+            position: relative;
+            font-weight: 300;
+            margin-top: 15px;
+
+            &::before {
+
+                content: "";
+                width: 60px;
+                height: 4px;
+                background-color: #f38181;
+                position: absolute;
+                left: 0;
+                top: 13px;
+
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .review-area__single-item {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        .review-area__content {
+            max-width: 100%;
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .review-area__icon {
+            border: none;
+            padding: 15px;
+
+            i {
+                font-size: 50px;
+            }
+        }
+    }
+
+
+}
+
+// Tablet Responsive
+
+@media(min-width:768px) and (max-width:991px) {
+    .review-area__single-item {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+
+        .review-area__content {
+            max-width: 100%;
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .review-area__icon {
+            padding: 15px;
+
+            i {
+                font-size: 70px;
+            }
+        }
+    }
+}
+
+
+@media(min-width:992px) and (max-width:1080px) {
+    .review-area__single-item {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+
+        .review-area__content {
+            max-width: 100%;
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .review-area__icon {
+            padding: 30px;
+
+            i {
+                font-size: 60px;
+            }
+        }
+    }
+}

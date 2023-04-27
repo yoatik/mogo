@@ -1,0 +1,126 @@
+.navbar-area {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s linear;
+
+    .navbar-brand {
+        font-size: 35px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .navbar-area__navbar-collapse--navbar-nav {
+        display: flex;
+        flex-direction: row;
+
+        .navbar-area__navbar-collapse--navbar-nav--nav-item {
+            margin-right: 2.6rem;
+
+            .navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link {
+                // padding-right: 1.3rem;
+                // padding-left: 1.3rem;
+                color: #ffff;
+
+            }
+
+            &:last-child {
+                margin-right: 0rem;
+            }
+        }
+    }
+
+    &.fixed {
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s linear;
+
+        .navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link {
+            color: #222 !important;
+        }
+
+        .navbar-brand {
+            color: #f38181;
+        }
+
+        .active {
+            color: #fce38a !important;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fce38a;
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .active {
+        color: #fce38a !important;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #fce38a;
+    }
+}
+
+// Mobile Responsive
+
+@media only screen and (max-width: 767px) {
+
+    .navbar-area{
+        &.fixed {
+            button.menu {
+                color: #f38181;
+            }
+        }
+    }
+    .menu {
+        display: block !important;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    a.navbar-brand {
+        font-size: 25px !important;
+    }
+
+    button.menu {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 8px 15px;
+        font-size: 22px;
+        line-height: 0;
+        color: #fff;
+        position: absolute;
+        right: 15px;
+        background: transparent;
+    }
+    
+}
+
+// Tablet Responsive
+
+@media(min-width:768px) and (max-width:991px) {
+    a.navbar-brand {
+        font-size: 30px !important;
+    }
+
+    .navbar-area__navbar-collapse--navbar-nav--nav-item {
+        margin-right: 1.3rem;
+        .navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link {
+            // padding-right: 1.0rem !important;
+            // padding-left: 1.0rem !important;
+        }
+    }
+}

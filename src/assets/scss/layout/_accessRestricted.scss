@@ -1,0 +1,16 @@
+@use '../abstracts/index' as abstract;
+
+/********************************************
+ * Restricted access styles
+ ********************************************/
+
+.access-restriction {
+    text-align: center;
+    @include abstract.margin(40, null, null, null);
+    i {
+        @include abstract.font-size-em(40);
+        @include abstract.margin(null, null, 3, null);
+        display: inline-block;
+        line-height: 1;
+    }
+}

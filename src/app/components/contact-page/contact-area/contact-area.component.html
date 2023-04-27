@@ -1,0 +1,68 @@
+<section class="contact-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <small>Contact With Us </small>
+                <h3>Get In touch</h3>
+                <!-- <button nz-button [nzType]="'primary'" (click)="createBasicNotification()">Open the notification box</button> -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <form class="contact-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                    <nz-form-item>
+                        <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+                        <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                            <input placeholder="Please input your email!" nz-input formControlName="email" id="email" />
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="name" nzRequired nzTooltipTitle="What do you want other to call you">
+                            <span>Name</span>
+                        </nz-form-label>
+                        <nz-form-control nzErrorTip="Please input your name!">
+                            <input nz-input id="name" placeholder="Please input your name!" formControlName="name" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-label nzFor="phoneNumber" nzRequired>Phone
+                            Number</nz-form-label>
+                        <nz-form-control [nzValidateStatus]="validateForm.controls['phoneNumber']"
+                            nzErrorTip="Please input your phone number!">
+                            <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                                <ng-template #addOnBeforeTemplate>
+                                    <nz-select formControlName="phoneNumberPrefix" class="phone-select">
+                                        <nz-option nzLabel="+86" nzValue="+86"></nz-option>
+                                        <nz-option nzLabel="+87" nzValue="+87"></nz-option>
+                                    </nz-select>
+                                </ng-template>
+                                <input placeholder="Please input your number!" formControlName="phoneNumber" id="'phoneNumber'" nz-input />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label nzFor="message" nzRequired>
+                            <span>Message</span>
+                        </nz-form-label>
+                        <nz-form-control class="message" nzErrorTip="Please input your message!">
+
+                            <textarea nz-input id="message" formControlName="message"
+                                placeholder="Please input your message"
+                                [nzAutosize]="{ minRows: 5, maxRows: 6 }"></textarea>
+                        </nz-form-control>
+
+                    </nz-form-item>
+
+                    <nz-form-item class="register-area">
+                        <nz-form-control>
+                            <button nz-button nzType="primary">Submit</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

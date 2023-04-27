@@ -1,0 +1,105 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?fed2f93bbc6fd2432a84babbc9eeed42") format("truetype"),
+url("./flaticon.woff?fed2f93bbc6fd2432a84babbc9eeed42") format("woff"),
+url("./flaticon.woff2?fed2f93bbc6fd2432a84babbc9eeed42") format("woff2"),
+url("./flaticon.eot?fed2f93bbc6fd2432a84babbc9eeed42#iefix") format("embedded-opentype"),
+url("./flaticon.svg?fed2f93bbc6fd2432a84babbc9eeed42#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "users": "\f101",
+    "shopping-cart": "\f102",
+    "search-interface-symbol": "\f103",
+    "alarm": "\f104",
+    "pin": "\f105",
+    "facebook-app-symbol": "\f106",
+    "google-plus-logo": "\f107",
+    "youtube": "\f108",
+    "instagram": "\f109",
+    "dribbble-logo": "\f10a",
+    "view": "\f10b",
+    "message": "\f10c",
+    "chat": "\f10d",
+    "image": "\f10e",
+    "home": "\f10f",
+    "monitor": "\f110",
+    "picture": "\f111",
+    "artboard": "\f112",
+    "pinterest": "\f113",
+    "menu": "\f114",
+);
+
+.flaticon-users:before {
+    content: map-get($flaticon-map, "users");
+}
+.flaticon-shopping-cart:before {
+    content: map-get($flaticon-map, "shopping-cart");
+}
+.flaticon-search-interface-symbol:before {
+    content: map-get($flaticon-map, "search-interface-symbol");
+}
+.flaticon-alarm:before {
+    content: map-get($flaticon-map, "alarm");
+}
+.flaticon-pin:before {
+    content: map-get($flaticon-map, "pin");
+}
+.flaticon-facebook-app-symbol:before {
+    content: map-get($flaticon-map, "facebook-app-symbol");
+}
+.flaticon-google-plus-logo:before {
+    content: map-get($flaticon-map, "google-plus-logo");
+}
+.flaticon-youtube:before {
+    content: map-get($flaticon-map, "youtube");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon-map, "instagram");
+}
+.flaticon-dribbble-logo:before {
+    content: map-get($flaticon-map, "dribbble-logo");
+}
+.flaticon-view:before {
+    content: map-get($flaticon-map, "view");
+}
+.flaticon-message:before {
+    content: map-get($flaticon-map, "message");
+}
+.flaticon-chat:before {
+    content: map-get($flaticon-map, "chat");
+}
+.flaticon-image:before {
+    content: map-get($flaticon-map, "image");
+}
+.flaticon-home:before {
+    content: map-get($flaticon-map, "home");
+}
+.flaticon-monitor:before {
+    content: map-get($flaticon-map, "monitor");
+}
+.flaticon-picture:before {
+    content: map-get($flaticon-map, "picture");
+}
+.flaticon-artboard:before {
+    content: map-get($flaticon-map, "artboard");
+}
+.flaticon-pinterest:before {
+    content: map-get($flaticon-map, "pinterest");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}

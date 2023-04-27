@@ -1,0 +1,36 @@
+<section class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <small>Our stories</small>
+                <h3>Latest blog</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 pb-30 pr-20" *ngFor="let blogdata of blogdata">
+                <a [routerLink]="['/blog', blogdata.id]" class="blog-area__single">
+                    <div class="blog-area__single--img">
+                        <img src={{blogdata.url}} alt="blog">
+                        <div class="data">
+                            <h4>{{blogdata.date}}</h4>
+                            <small>{{blogdata.month}}</small>
+                        </div>
+                    </div>
+                    <div class="blog-area__single--content">
+                        <h3>{{blogdata.title}}</h3>
+                        <p>
+                            {{blogdata.desc}}
+                        </p>
+                        <hr>
+                        <ul>
+                            <li><i class="flaticon-view"></i><span>{{blogdata.view}}</span></li>
+                            <li><i class="flaticon-message"></i><span>{{blogdata.message}}</span></li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</section>

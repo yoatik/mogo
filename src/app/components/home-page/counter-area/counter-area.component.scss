@@ -1,0 +1,95 @@
+// 
+.counter-area {
+    position: relative;
+    background: #95e1d3;
+    overflow: hidden;
+
+    .counter-area__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-right: 1px solid #fff;
+
+        .counter-area__single--content {
+            text-align: center;
+            border-left: 1px solid #fff;
+            padding: 70px 0;
+            width: 25%;
+
+            h2 {
+                color: #fff;
+                font-size: 72px;
+                font-family: Montserrat, sans-serif;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 25px;
+            }
+
+            p {
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            &.last-child {
+                border-right: 1px solid #fff;
+
+            }
+        }
+
+    }
+}
+
+// Mobile
+@media only screen and (max-width: 767px) {
+    .counter-area {
+        .counter-area__wrap {
+            display: block;
+            border-right: none;
+
+            .counter-area__single--content {
+                border-left: none;
+                padding: 20px 0;
+                width: 100%;
+                border-bottom: 1px solid #fff;
+
+                h2 {
+                    font-size: 50px;
+                    margin-bottom: 15px;
+                }
+
+                &.last-child {
+                    border-right: none;
+
+                }
+            }
+
+        }
+    }
+}
+
+// Tablat Reponsive 
+@media(min-width:768px) and (max-width:991px) {
+    .counter-area {
+        .counter-area__wrap {
+            .counter-area__single--content {
+                padding: 40px 0;
+
+                h2 {
+                    font-size: 60px;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    text-transform: capitalize;
+                    font-size: 15px;
+                }
+
+                &.last-child {
+                    border-right: none;
+
+                }
+            }
+
+        }
+    }
+}

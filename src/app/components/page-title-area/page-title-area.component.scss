@@ -1,0 +1,30 @@
+.page-title-area {
+    position: relative;
+    z-index: 1;
+    background: url(../../../assets/images/banner/1.jpg) no-repeat;
+    height: 400px;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    width: 100% !important;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgb(252, 227, 138);
+        background: linear-gradient(0deg, rgba(252, 227, 138, 1) 0%, rgba(243, 129, 129, 1) 100%);
+        z-index: -1;
+        opacity: 0.8;
+    }
+
+    h2 {
+        font-size: 60px;
+        text-align: center;
+        color: #fff;
+        font-family: Kaushan Script, cursive;
+    }
+}

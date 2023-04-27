@@ -1,0 +1,104 @@
+<nav class="navbar-area navbar" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">MOGO</a>
+
+        <button class="menu" (click)="open()"><i class="flaticon-menu"></i></button>
+
+        <div class="navbar-area__navbar-collapse desktop">
+            <ul class="navbar-area__navbar-collapse--navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link " [routerLink]="['/about']"
+                        routerLinkActive="active">About</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/service']"
+                        routerLinkActive="active">Service</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link"
+                        routerLinkActive="active">Work</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/blog']"
+                        routerLinkActive="active">Blog</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/contact']"
+                        routerLinkActive="active">Contact</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link"><i
+                            class="flaticon-shopping-cart"></i></a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a (click)="showSearchModal()"
+                        class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link pe-0" href="javascript:;"><i
+                            class="flaticon-search-interface-symbol"></i></a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <nz-modal class="search-modal" [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()"
+            (nzOnOk)="handleOk()">
+            <ng-container *nzModalContent>
+                <p>Content one</p>
+                <p>Content two</p>
+                <p>Content three</p>
+            </ng-container>
+        </nz-modal>
+        
+    </div>
+
+    <nz-drawer [nzClosable]="true" [nzVisible]="visible" nzPlacement="right" nzTitle="MOGO" (nzOnClose)="close()"
+        class="mobile">
+        <ng-container *nzDrawerContent>
+            <ul class="navbar-area__navbar-collapse--navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/about']"
+                        routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>About</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/service']"
+                        routerLinkActive="active">Service</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link"
+                        routerLinkActive="active">Work</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/blog']"
+                        routerLinkActive="active">Blog</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link" [routerLink]="['/contact']"
+                        routerLinkActive="active">Contact</a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link"><i
+                            class="flaticon-shopping-cart"></i></a>
+                </li>
+
+                <li class="navbar-area__navbar-collapse--navbar-nav--nav-item">
+                    <a class="navbar-area__navbar-collapse--navbar-nav--nav-item--nav-link"><i
+                            class="flaticon-search-interface-symbol"></i></a>
+                </li>
+
+            </ul>
+        </ng-container>
+    </nz-drawer>
+</nav>
+
+<router-outlet></router-outlet>

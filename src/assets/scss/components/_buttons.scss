@@ -1,0 +1,122 @@
+@use '../abstracts/index' as abstract;
+
+/********************************************
+ * Get button styles
+********************************************/
+
+@keyframes loadingIcon {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+button {
+    &:focus,
+    &:active {
+        box-shadow: none !important;
+        outline: 0;
+    }
+    &:disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+.main-btn {
+    cursor: pointer;
+    background-color: abstract.$primaryColor;
+    color: var(--theme-bg);
+    // width: 100%;
+    padding: var(--input-btn-padding);
+    border-radius: 5px;
+    border: 1px solid abstract.$primaryColor;
+    line-height: 1;
+    @include abstract.font-size-em(15);
+    height: 42px;
+    min-width: 150px;
+    transition: all 0.3s linear;
+    i {
+        @include abstract.font-size-em(15);
+        @include abstract.margin(null, 8, null, 8);
+        display: inline-flex;
+        position: relative;
+        top: 1px;
+        transition: transform 0.2s cubic-bezier(0.4, 0.29, 0.19, 0.46);
+    }
+    &:hover {
+        background-color: abstract.$primaryColorDark;
+        i {
+            transform: translateX(10px);
+        }
+    }
+    @include abstract.respond-to(small) {
+        height: 50px;
+        min-width: 180px;
+    }
+    &__border {
+        background-color: transparent;
+        color: abstract.$primaryColor;
+        &:hover {
+            background-color: abstract.$primaryColor;
+            color: var(--theme-bg);
+        }
+    }
+    &__gray {
+        background-color: abstract.$grayColor;
+        border-color: abstract.$grayColor;
+        color: var(--text-color);
+        &:hover {
+            color: var(--text-color);
+            background-color: abstract.$grayColor;
+        }
+    }
+    &__orange {
+        background-color: abstract.$secondaryColor;
+        border-color: abstract.$secondaryColor;
+        &:hover {
+            background-color: abstract.$secondaryColor;
+        }
+    }
+    &__danger {
+        background-color: abstract.$danger;
+        border-color: abstract.$danger;
+        &:hover {
+            background-color: abstract.$danger;
+        }
+    }
+    &__animating {
+        position: relative;
+        i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            animation: loadingIcon 1.7s linear infinite;
+            transition: none;
+        }
+        &:hover {
+            i {
+                transform: none;
+            }
+        }
+    }
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+.close-icon {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    @include abstract.font-size-em(14);
+    color: var(--text-color);
+    transition: color 0.3s linear;
+    &:hover {
+        color: abstract.$secondaryColor;
+    }
+}

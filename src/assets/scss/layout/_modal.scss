@@ -1,0 +1,75 @@
+@use '../abstracts/index' as abstract;
+
+/********************************************
+ * Modal styles
+ ********************************************/
+
+.modal {
+    &-body {
+        @include abstract.padding(13, 20, 13, 20);
+        max-height: 585px;
+        @include abstract.scrollbar(5px, abstract.$grayColor, transparent);
+        overflow: auto;
+        // padding: 0;
+        p {
+            @include abstract.font-size-em(15);
+            color: var(--text-color);
+            &:not(:last-child) {
+                @include abstract.margin(null, null, 10, null);
+            }
+        }
+        ul {
+            li {
+                list-style: none;
+                @include abstract.font-size-em(15);
+                @include abstract.margin(null, null, 4, null);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                color: var(--text-color);
+                &:before {
+                    content: "•";
+                    line-height: 1;
+                    @include abstract.font-size-em(17);
+                    @include abstract.margin(null, 8, null, null);
+                }
+            }
+        }
+    }
+    &-footer {
+        @include abstract.padding(13, 20, 13, 20);
+        border-top: 1px solid rgba(abstract.$grayColor, 0.42);
+        &__buttons {
+            .main-btn {
+                &:not(:last-child) {
+                    @include abstract.margin(null, 10, null, null);
+                }
+                @include abstract.respond-to(small) {
+                    width: 100px;
+                    min-width: 100px;
+                    height: 43px;
+                }
+                width: 85px;
+                min-width: 85px;
+                height: 38px;
+            }
+        }
+    }
+}
+
+// Response info for result
+.response-info {
+    i {
+        @include abstract.font-size-em(55);
+        line-height: 1;
+        @include abstract.margin(null, null, 3.5, null);
+        display: block;
+        position: relative;
+        top: 2px;
+    }
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
